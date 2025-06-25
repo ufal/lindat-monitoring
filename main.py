@@ -6,7 +6,7 @@ from urllib.parse import urlsplit
 from pprint import pprint
 import os
 
-SHORTREF_API_URL = "https://lindat.mff.cuni.cz/repository/rest/services/handles/magic"
+SHORTREF_API_URL = "https://lindat.mff.cuni.cz/repository/server/api/services/handles/magic"
 ICINGA_API = "https://localhost:5665/v1"
 
 #/usr/lib/python3/dist-packages/urllib3/connectionpool.py:794: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
