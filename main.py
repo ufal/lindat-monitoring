@@ -16,15 +16,9 @@ def get_handles():
     with requests.session() as s:
         handles = []
         s.headers.update({'Accept': 'application/json'})
-        offset = 0
-        while True:
-            params = {'offset': offset, 'limit': 100}
-            offset += 1
-            r = s.get(SHORTREF_API_URL, params=params)
-            if not len(r.json()):
-                break
-            for handle in r.json():
-                handles.append(handle)
+        r = s.get(SHORTREF_API_URL)
+        for handle in r.json():
+            handles.append(handle)
     return handles
 
 def get_config():
