@@ -12,6 +12,7 @@ fi
 wget --quiet -O - "$BASE/$URLPATH" | (hxwls -b "$BASE" 2>&1 || true) | \
 egrep "$PATTERN" | sed -e 's#/static/#/static-files/#' | 
 while read -r line; do
+  [[ "$line" != *.html ]] && line+='.html'
   if [ ! -z $DEBUG ]; then echo "DBG: $line"; fi
   output=$($SCRIPTPATH/check_url_status -o -U $line) || {
 	echo "$output"
